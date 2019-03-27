@@ -142,13 +142,18 @@ html {
 p {
   line-height: 1.25;
   margin: 15px 0;
-  font-size: 1.8rem;
 }
 .container {
   max-width: 900px;
   margin: 4% auto;
   padding: 2%;
   border: 1px solid darkgrey;
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header {
   border: 1px solid white;
@@ -157,6 +162,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header h1 {
   font-size: 5rem;
@@ -177,7 +188,8 @@ header .navbar a:hover {
 }
 .intro {
   display: flex;
-  font-size: 2rem;
+  align-items: center;
+  font-size: 3rem;
 }
 .intro img {
   width: 48%;
@@ -186,18 +198,26 @@ header .navbar a:hover {
 }
 .intro .info {
   width: 48%;
+  align-items: flex-start;
 }
 .intro .info .tldr {
   display: flex;
   justify-content: flex-end;
+  font-size: 2rem;
 }
 .intro .info .tldr h2 {
   justify-content: center;
   align-items: center;
 }
+.intro .info .tldr-txt {
+  font-size: 1.8rem;
+}
+.knowledge {
+  display: flex;
+}
 .skills {
   border: 1px solid darkgrey;
-  width: 48%;
+  width: 45%;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -213,5 +233,46 @@ header .navbar a:hover {
   align-content: space-around;
 }
 .skills li i {
+  font-size: 3rem;
+}
+.skills2 {
+  margin: 4%;
+  width: 45%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills2 h2 {
+  font-size: 3.5rem;
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+}
+.skills2 li {
+  margin: 5px 10px;
+  align-content: space-around;
+  font-size: 3rem;
+}
+.work-history {
+  border: 1px solid black;
+  width: 92%;
+  margin: 2%;
+  padding: 2%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.work-history h2 {
+  font-size: 3.5rem;
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+}
+.work-history li {
+  margin: 5px 10px;
+  align-content: space-around;
+  font-size: 3rem;
+}
+.contact {
   font-size: 3rem;
 }
