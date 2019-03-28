@@ -4,56 +4,293 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
 }
 
+// Variables
+@main-color: black;
+@secondary-color: darkgrey;
+@tertiary-color: white;
+// Mixins
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+// CSS
+html {
+  background-color: @main-color;
+  color: @secondary-color;
+}
+p {
+  line-height: 1.25;
+  margin: 15px 0;
+}
+.container {
+  max-width: 900px;
+  margin: 4% auto;
+  padding: 2%;
+  //   font-size: 2rem;
+  border: 1px solid @secondary-color;
+
+  @media( max-width: 500px ) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header {
+  border: 1px solid @tertiary-color;
+  padding: 5%;
+  .center;
+  .column;
+  @media( max-width: 500px ) {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 5rem;
+    color: @tertiary-color;
+    margin-bottom: 10px;
+  }
+  .navbar {
+    justify-content: flex-end;
+
+    a {
+      font-size: 2.5rem;
+      margin: 5px 10px;
+      text-decoration: none;
+      color: @secondary-color;
+      &:hover {
+        color: green;
+      }
+    } //header h1 a
+  } //header h1
+} //header
+.intro {
+  // border: 1px solid @secondary-color;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  img {
+    width: 48%;
+    height: auto;
+    margin: 10px;
+  }
+  .info {
+    width: 48%;
+    align-items: flex-start;
+
+    .tldr {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 2rem;
+      h2 {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .tldr-txt {
+      font-size: 1.8rem;
+    }
+  }
+}
+.knowledge {
+	display: flex;
+	
+}
+  .skills {
+    border: 1px solid @secondary-color;
+    width: 45%;
+    .center;
+    .column;
+    
+    h2 {
+      font-size: 3.5rem;
+      border-bottom: 1px solid @tertiary-color;
+      margin-bottom: 5px;
+    }
+    li {
+      margin: 5px 10px;
+      align-content: space-around;
+      i {
+        font-size: 3rem;
+      }
+    }
+  }
+  .skills2 {
+	// border: 1px solid @secondary-color;
+	margin: 4%;
+    width: 45%;
+    .center;
+    .column;
+    h2 {
+      font-size: 3.5rem;
+      border-bottom: 1px solid @tertiary-color;
+      margin-bottom: 5px;
+    }
+    li {
+      margin: 5px 10px;
+      align-content: space-around;
+      font-size: 3rem;
+    }
+  }
+
+.work-history {
+  border: 1px solid @main-color;
+  width: 92%;
+  margin: 2%;
+  padding: 2%;
+  .center;
+  .column;
+  h2 {
+    font-size: 3.5rem;
+    border-bottom: 1px solid @tertiary-color;
+    margin-bottom: 5px;
+  }
+  li {
+    margin: 5px 10px;
+    align-content: space-around;
+    font-size: 3rem;
+  }
+}
+.contact {
+	font-size: 3rem;
+}
